@@ -1,0 +1,6 @@
+Locust is a text editor heavily inspired from Vim! Locust is currently in development and will be worked on more.
+Every hotkey is the same! and same command style.
+
+shoutout vim!!! (best text editor ever btw)
+
+refer to cicada if you prefer a text editor like Nano.

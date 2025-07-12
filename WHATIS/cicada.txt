@@ -1,0 +1,4 @@
+Cicada is an open-source text editor inspired heavily from Nano. It works very similar to Nano!
+If  you like Nano, please use Cicada!
+
+continue to locust if you enjoy Vim.
