@@ -1,4 +1,4 @@
-<h1 align="center"> NuCMDs - Linux-Style Command Line for PowerShell</h1>
+<h1 align="center"> NuCMDs - Linux-Style Command Line for PowerShell written in C</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Alpha-red" alt="status">
@@ -22,7 +22,7 @@
   - `cicada` (inspired by **Nano**)
 -  **Configuration:** Refer to config.c
 -  **Support:** Works anywhere on Windows 10 & 11.
--  **Written in C:** Clean, fast, portable code.-  **Open Source:** Free to use & distribute with credit to `pgp` or `IPN`.
+-  **Open Source:** Free to use & distribute with credit to `pgp` or `IPN`.
 
 ---
 
