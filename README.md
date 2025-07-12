@@ -43,7 +43,7 @@
 > Click installer.exe and choose your path with the .exes you downloaded. This script will make your system path recognize NuCMDs commands.
 
 
-*** GCC Method (very time consuming lol..)
+## GCC Method (very time consuming lol..)
 > grab the config.c file and compile each command using the format `gcc config.c -o (commandname).exe -D(CMDNAME)` (please note that certain commands require a flag after this.)
 
 ###  Python Installer (Untested in VMs)
