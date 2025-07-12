@@ -1382,7 +1382,6 @@ int main() {
                 print_centered(10, "Press number (1-3) or ESC to exit");
                 break;
             case '2':
-                // Open Monero wallet URL in default browser
                 system("start https://www.pgpkey.net");
                 print_centered(HEIGHT - 2, "Opened donation page. Press any key...");
                 _getch();
@@ -1586,7 +1585,6 @@ void mark_all_dirty() {
 }
 
 void draw_screen() {
-    // Draw only lines marked dirty
     int max_rows = screenHeight - 2; // status + cmd line
     for (int i = 0; i < max_rows; i++) {
         int file_line = i + row_offset;
@@ -1619,7 +1617,7 @@ void draw_screen() {
     } else if (mode == MODE_NORMAL || mode == MODE_INSERT) {
         
         COORD coord = {0, (SHORT)(screenHeight - 1)};
-        SetConsoleCursorPosition(hConsole, coord);
+        SetConsoleCursorPosition(hConsole, coord); // literally fuck this part btw
         printf("%-*s", screenWidth, "");
     }
 
@@ -2103,7 +2101,7 @@ int main(int argc, char **argv) {
         int c = _getch();
 
         if (mode == MODE_NORMAL) {
-            if (c == 0 || c == 224) { // Special keys
+            if (c == 0 || c == 224) { 
                 c = _getch(); // ignore arrows for now or you can add here
             }
             process_normal_mode(c);
@@ -2238,7 +2236,6 @@ void draw_message_bar() {
     if (status_msg[0] && now - status_msg_time < 5000) {
         printf("%-*s", screenWidth, status_msg);
     } else {
-        // Clear line
         printf("%-*s", screenWidth, "");
     }
 }
@@ -2324,8 +2321,6 @@ void insert_char(char c) {
     if (cy >= MAX_LINES) return;
     int len = (int)strlen(buffer[cy]);
     if (len >= MAX_LINE_LENGTH - 1) return;
-
-    // Shift chars right
     for (int i = len; i >= cx; i--) {
         buffer[cy][i+1] = buffer[cy][i];
     }
@@ -2360,18 +2355,13 @@ void delete_char() {
     cx--;
     dirty = true;
 }
-
 void insert_newline() {
     if (num_lines >= MAX_LINES - 1) return;
-
     int len = (int)strlen(buffer[cy]);
     char new_line[MAX_LINE_LENGTH];
 
-    // Split line at cursor
     strcpy(new_line, &buffer[cy][cx]);
     buffer[cy][cx] = 0;
-
-    // Shift lines down
     for (int i = num_lines; i > cy + 1; i--) {
         strcpy(buffer[i], buffer[i-1]);
     }
@@ -2463,7 +2453,7 @@ void process_keypress() {
             searching = false;
             set_status_message("");
             return;
-        } else if (c == 13) { // Enter run search
+        } else if (c == 13) { 
             searching = false;
             search_forward();
             return;
